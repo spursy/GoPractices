@@ -1,13 +1,19 @@
 package main
 
-func main() {
-	// demo 1
-	// var badMap1 = map[[]int]int{}
+import "fmt"
 
-	var badMap2 = map[interface{}] int {
-		"1": 1,
-		[]int{2}: 2,
-		// 3: 3
+func main() {
+	aMap := map[string]int{
+		"one": 1,
+		"two": 2,
+		"three": 3,
 	}
-	_ = badMap2;
+
+	k := "two"
+	v, ok := aMap[k]
+	if ok {
+		fmt.Printf("The element of key %q: %d\n", k, v)
+	} else {
+		fmt.Printf("Not found")
+	}
 }
